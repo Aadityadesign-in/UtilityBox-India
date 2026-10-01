@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    >
+
+    <meta
+        name="description"
+        content="UtilityBox India - PDF, image, calculator, student, QR and everyday utility tools in one place."
+    >
+
+    <title>UtilityBox India — All Useful Tools in One Place</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="manifest"
+        href="manifest.webmanifest"
+    >
+<meta
+    name="theme-color"
+    content="#2563eb"
+>
+
+<meta
+    name="description"
+    content="UtilityBox India - PDF, image, calculator, student, QR and everyday utility tools in one place."
+>
+
+<meta
+    name="mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+>
+
+<link
+    rel="manifest"
+    href="manifest.webmanifest"
+>
+
+<link
+    rel="icon"
+    type="image/png"
+    href="icons/icon-192.png"
+>
+
+</head>
+
+<body>
+
+<header class="header" id="header">
+
+    <div class="container nav-container">
+
+        <a href="#" class="brand">
+            <span class="brand-icon">🧰</span>
+
+            <span>
+                UtilityBox
+                <strong>INDIA</strong>
+            </span>
+        </a>
+
+        <nav class="desktop-nav" id="desktopNav">
+
+            <a href="#tools">Tools</a>
+            <a href="#categories">Categories</a>
+            <a href="#popular">Popular</a>
+
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                aria-label="Change theme"
+            >
+                🌙
+            </button>
+
+        </nav>
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+
+        <a href="#tools">Tools</a>
+        <a href="#categories">Categories</a>
+        <a href="#popular">Popular</a>
+
+        <button id="mobileThemeBtn">
+            🌙 Theme
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-badge">
+                🇮🇳 Made for India
+            </div>
+
+            <h1>
+                One Place.
+                <span>Hundreds of Useful Tools.</span>
+            </h1>
+
+            <p>
+                Compress images, calculate percentages, generate QR codes,
+                convert files, study smarter and more — all in one place.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <span class="search-icon">🔍</span>
+
+                <input
+                    type="search"
+                    id="toolSearch"
+                    placeholder="Search tools... e.g. PDF, calculator, QR"
+                    autocomplete="off"
+                >
+
+                <button id="clearSearch">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <!-- QUICK SEARCH -->
+
+            <div class="quick-search">
+
+                <span>Popular:</span>
+
+                <button
+                    class="quick-chip"
+                    data-search="Image Compressor"
+                >
+                    Image Compressor
+                </button>
+
+                <button
+                    class="quick-chip"
+                    data-search="Image to PDF"
+                >
+                    Image to PDF
+                </button>
+
+                <button
+                    class="quick-chip"
+                    data-search="Percentage"
+                >
+                    Percentage
+                </button>
+
+                <button
+                    class="quick-chip"
+                    data-search="QR Generator"
+                >
+                    QR Generator
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOOLS -->
+
+    <section
+        class="section"
+        id="tools"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        TOOLBOX
+                    </span>
+
+                    <h2>
+                        All Tools
+                    </h2>
+
+                    <p id="toolCount">
+                        Useful tools for everyday work.
+                    </p>
+                </div>
+
+                <button
+                    class="secondary-btn"
+                    id="viewAllBtn"
+                >
+                    View All
+                </button>
+
+            </div>
+
+
+            <div
+                class="tool-grid"
+                id="toolGrid"
+            >
+                <!-- Dynamic tools -->
+            </div>
+
+
+            <div
+                class="empty-state"
+                id="emptyState"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    No tools found
+                </h3>
+
+                <p>
+                    Try another search or select a different category.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    id="resetSearchBtn"
+                >
+                    Show All Tools
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- =====================================================
+     FAVORITE TOOLS
+===================================================== -->
+
+<section
+    class="section quick-access-section"
+    id="favoriteSection"
+    hidden
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-kicker">
+                YOUR TOOLS
+            </span>
+
+            <h2>
+                Favorite Tools
+            </h2>
+
+            <p>
+                Your saved tools in one place.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        class="tool-grid"
+        id="favoriteToolsGrid"
+    ></div>
+
+</section>
+
+
+    <!-- CATEGORIES -->
+
+    <section
+        class="section categories-section"
+        id="categories"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Browse by Category
+                    </h2>
+
+                    <p>
+                        Find the right tool faster.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="category-grid"
+                id="categoryGrid"
+            >
+                <!-- Dynamic categories -->
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR -->
+
+    <section
+        class="section"
+        id="popular"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        TRENDING
+                    </span>
+
+                    <h2>
+                        Popular Tools
+                    </h2>
+
+                    <p>
+                        Tools people commonly use.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="tool-grid"
+                id="popularGrid"
+            >
+                <!-- Dynamic popular tools -->
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section analytics-section" id="analyticsSection">
+    <div class="section-heading">
+        <div>
+            <span class="section-kicker">ANALYTICS</span>
+            <h2>Usage Overview</h2>
+            <p>See how UtilityBox tools are being used on this device.</p>
+        </div>
+
+        <div class="analytics-actions">
+            <button type="button" id="refreshAnalyticsBtn">
+                ↻ Refresh
+            </button>
+
+            <button
+                type="button"
+                id="clearAnalyticsBtn"
+                class="danger-btn"
+            >
+                Clear Data
+            </button>
+        </div>
+    </div>
+
+    <div class="analytics-stats">
+        <article class="analytics-stat-card">
+            <span class="analytics-stat-icon">🧰</span>
+            <div>
+                <strong id="analyticsTotalUses">0</strong>
+                <span>Total Tool Uses</span>
+            </div>
+        </article>
+
+        <article class="analytics-stat-card">
+            <span class="analytics-stat-icon">🔎</span>
+            <div>
+                <strong id="analyticsTotalSearches">0</strong>
+                <span>Total Searches</span>
+            </div>
+        </article>
+
+        <article class="analytics-stat-card">
+            <span class="analytics-stat-icon">📊</span>
+            <div>
+                <strong id="analyticsUniqueTools">0</strong>
+                <span>Tools Used</span>
+            </div>
+        </article>
+
+        <article class="analytics-stat-card">
+            <span class="analytics-stat-icon">📂</span>
+            <div>
+                <strong id="analyticsCategories">0</strong>
+                <span>Categories Used</span>
+            </div>
+        </article>
+    </div>
+
+    <div class="analytics-grid">
+
+        <article class="analytics-panel">
+            <div class="analytics-panel-heading">
+                <h3>Most Used Tools</h3>
+            </div>
+
+            <div id="topToolsList" class="analytics-list">
+                <p class="analytics-empty">
+                    No tool usage recorded yet.
+                </p>
+            </div>
+        </article>
+
+        <article class="analytics-panel">
+            <div class="analytics-panel-heading">
+                <h3>Category Usage</h3>
+            </div>
+
+            <div id="categoryUsageList" class="analytics-list">
+                <p class="analytics-empty">
+                    No category usage recorded yet.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="analytics-last-activity">
+        <span>Last Activity</span>
+        <strong id="analyticsLastActivity">No activity yet</strong>
+    </div>
+</section>
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+            <div class="cta-card">
+
+                <div>
+
+                    <span class="cta-icon">
+                        📱
+                    </span>
+
+                    <h2>
+                        UtilityBox in Your Pocket
+                    </h2>
+
+                    <p>
+                        Install UtilityBox India and access your
+                        favorite utilities faster.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="installBtn"
+                >
+                    Install App
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<button
+    type="button"
+    class="install-app-btn"
+    data-install-app
+    hidden
+>
+    📲 Install App
+</button>
+
+
+<!-- TOOL MODAL -->
+
+<div
+    class="tool-modal"
+    id="toolModal"
+    aria-hidden="true"
+>
+
+    <div class="tool-modal-overlay" id="modalOverlay"></div>
+
+    <div class="tool-modal-content">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close tool"
+        >
+            ✕
+        </button>
+
+        <div id="toolModalBody">
+            <!-- Dynamic tool interface -->
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <a href="#" class="brand footer-brand">
+
+                <span class="brand-icon">
+                    🧰
+                </span>
+
+                <span>
+                    UtilityBox
+                    <strong>INDIA</strong>
+                </span>
+
+            </a>
+
+            <p>
+                Useful digital tools for everyone.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#tools">Tools</a>
+            <a href="#categories">Categories</a>
+            <a href="#popular">Popular</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            © <span id="currentYear"></span>
+            UtilityBox India. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase-config.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
